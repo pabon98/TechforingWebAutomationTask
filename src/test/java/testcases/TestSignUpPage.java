@@ -1,10 +1,5 @@
 package testcases;
-import net.sourceforge.tess4j.ITesseract;
-import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -53,7 +48,7 @@ public class TestSignUpPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         WebElement maleOption = wait.until(ExpectedConditions.visibilityOfElementLocated(signUpPage.gender_male_locator));
         maleOption.click();
-        signUpPage.writeOneElement(signUpPage.email_locator, "naviyab@abc.com");
+        signUpPage.writeOneElement(signUpPage.email_locator, "naviyab@def.com");
         signUpPage.writeOneElement(signUpPage.password_locator, "Naviyab677");
         signUpPage.writeOneElement(signUpPage.confirm_password_locator, "Naviyab677");
         Thread.sleep(10000);
@@ -63,10 +58,6 @@ public class TestSignUpPage extends BasePage {
             signUpPage.clickOneElement(signUpPage.signup_locator);
         }
         Thread.sleep(3000);
-
-
-
-
 
     }
 }
